@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var characterTypeArray = [];
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -20,14 +20,25 @@ function writePassword() {
       }
     }
 
-    
-    // var specialCharacter = prompt("What character types would you like in your password?", "lowercase, uppercase, numeric, special characters");
-    
+    for (var i = 0; i < 1;) {
+      var characterType = prompt("Which character type would you like in your password?", "lowercase, uppercase, numeric, special");
 
+      if(characterType == null) {
+          throw alert("Program canceled");
+      }
+
+      if ((characterType.toLowerCase() === "lowercase") || (characterType.toLowerCase() === "uppercase") || (characterType.toLowerCase() === "numeric") || (characterType.toLowerCase() === "special")) {
+        characterTypeArray.push(characterType.toLowerCase());
+
+        var confirmResponse = confirm("Would you like to enter another character type?");
+        if (!confirmResponse) {
+        break;
+        }
+      } else {
+        alert("Entered invalid character type")
+      }
+    }
   }
-
-
-
 
   var passwordText = document.querySelector("#password");
 
