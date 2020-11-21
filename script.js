@@ -64,7 +64,7 @@ function generatePassword() {
 
 
     for (var i = 0; i < passwordLength; i++) {
-        randomCharacterType = characterTypeArray[Math.floor(Math.random() * (characterTypeArray.length - 1))];
+        randomCharacterType = characterTypeArray[Math.floor(Math.random() * (characterTypeArray.length))];
         randomKey = characterObject[randomCharacterType];
         randomizeArray = randomKey[Math.floor(Math.random() * (randomKey.length - 1))];
         newPassword += randomizeArray;
