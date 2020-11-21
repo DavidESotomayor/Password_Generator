@@ -6,11 +6,24 @@ function writePassword() {
   var password = generatePassword();
 
   function generatePassword() {
-    var passwordLength = prompt("How long would you like your password to be?", "Must be between 8 and 128 characters");
 
-    var specialCharacter = prompt("What character types would you like in your password?", "lowercase, uppercase, numeric, special characters");
+    for (var i = 0; i < 1;) {
+      var passwordLength = prompt("How long would you like your password to be?", "Must be a number between 8 and 128 characters");
+
+      if (isNaN(passwordLength) || (passwordLength < 8 || passwordLength > 128) && (passwordLength != null)){
+        alert ("Password must be a number between 8 and 128 characters")
+      } else if (passwordLength == null){
+        throw alert("Program Canceled")
+      } else {
+        passwordLength = parseInt(passwordLength)
+        break;
+      }
+    }
 
     
+    // var specialCharacter = prompt("What character types would you like in your password?", "lowercase, uppercase, numeric, special characters");
+    
+
   }
 
 
